@@ -9,7 +9,7 @@ Content-Type: application/json
     "username":"bob"
 }
 ###
-POST http://localhost:3000/api/item HTTP/1.1
+POST http://localhost:3000/api/task HTTP/1.1
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
     "creator":"23457727-5862-482a-9828-8c4954d40e34"
 }
 ###
-POST http://localhost:3000/api/item HTTP/1.1
+POST http://localhost:3000/api/task HTTP/1.1
 Content-Type: application/json
 
 {
@@ -26,3 +26,38 @@ Content-Type: application/json
     "content": "Do something B",
     "creator":"23457727-5862-482a-9828-8c4954d40e34"
 }
+### Get All Tasks
+GET http://localhost:3000/api/task
+
+### Get All Users
+GET http://localhost:3000/api/user
+
+### Change User
+PUT http://localhost:3000/api/user/6ac96dd2-661a-4c49-842a-4ff66388f22c
+Content-Type: application/json
+
+ {
+    "_id": "6ac96dd2-661a-4c49-842a-4ff66388f22c",
+    "username": "bob",
+    "preferences": {
+        "lang": "English"
+    },
+    "__v": 0
+  }
+###
+PUT http://localhost:3000/api/task/198bb74b-330a-4fba-a7a4-0386de3b2b6e
+Content-Type: application/json
+
+{
+    "_id": "198bb74b-330a-4fba-a7a4-0386de3b2b6e",
+    "itemType": "Task",
+    "content": "Do something C",
+    "creator": "23457727-5862-482a-9828-8c4954d40e34",
+    "__v": 0
+  }
+
+### Get A single user
+GET http://localhost:3000/api/user/6ac96dd2-661a-4c49-842a-4ff66388f22c
+
+### Delete a task
+DELETE http://localhost:3000/api/task/198bb74b-330a-4fba-a7a4-0386de3b2b6e

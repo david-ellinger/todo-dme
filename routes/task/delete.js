@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const User = require('../../models/User');
+const Task = require('../../models/Task');
 router.delete('/:id', (req,res,next) => {
-    User.findByIdAndDelete(req.params.id).then(result =>{
+    Task.findByIdAndDelete(req.params.id).then(result =>{
         console.log(`Delete Result: ${result}`);
         return res.status(204).json();
     }).catch(err => {
-        console.log(`Error deleting user: ${err}`);
-        return res.status(500).json({msg: `Error deleting user`});
+        console.log(`Error deleting task: ${err}`);
+        return res.status(500).json({msg: `Error deleting task`});
     });
 });
 

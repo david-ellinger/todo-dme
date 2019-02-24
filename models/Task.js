@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const uuid = require('uuid/v4');
 
-const Item = new mongoose.Schema({
+const Task = new mongoose.Schema({
     _id: {
         type: String,
         default: uuid()
@@ -14,4 +14,4 @@ const Item = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Item', Item);
+module.exports = mongoose.model('Task', Task);

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Item = require('../../models/Item');
+const Task = require('../../models/Task');
 const uuid = require('uuid/v4');
 
 router.post('/', (req,res, next) => {
@@ -8,12 +8,12 @@ router.post('/', (req,res, next) => {
             msg: "Missing required fields"
         });
     }
-    const item = new Item({...req.body, _id: uuid()})
-    item.save().then(savedItem => {
+    const task = new Task({...req.body, _id: uuid()})
+    task.save().then(savedItem => {
         return res.status(201).json(savedItem);
     }).catch((error) => {
-        console.log(`Error saving Item: ${error}`);
-        return res.status(500).json({msg: `Error saving item`})
+        console.log(`Error saving task: ${error}`);
+        return res.status(500).json({msg: `Error saving task`});
     });
 })
 
