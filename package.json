@@ -1,0 +1,25 @@
+{
+  "name": "dme-time",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "npx nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Ellinger",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "helmet": "^3.15.1",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.15"
+  },
+  "devDependencies": {
+    "mocha": "^6.0.1",
+    "nodemon": "^1.18.10",
+    "supertest": "^3.4.2",
+    "tape": "^4.10.1"
+  }
+}
